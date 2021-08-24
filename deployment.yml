@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-petclinic
+  name: svc-cart
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: spring-petclinic
+      app: svc-cart
   template:
     metadata:
       labels:
-        app: spring-petclinic
+        app: svc-cart
     spec:
       containers:
       # modify the following line with your Docker Hub account name
-      - image: index.docker.io/anthonyvetter/spring-petclinic:latest
-        name: spring-petclinic
+      - image: index.docker.io/ruslanbyondxr/svc-cart:latest
+        name: svc-cart
         ports:
         - containerPort: 8080
